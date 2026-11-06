@@ -162,6 +162,11 @@ Migrations are plain SQL files in `src/main/db/migrations/` applied by `migrate.
 
 When schemas change, add a new numbered migration here and append to this list.
 
+## Releases & Logs
+- Installers are published as GitHub Release assets, not committed to the repo (`release/` is git-ignored).
+- The main process writes startup errors and window lifecycle events to `%APPDATA%/server-manager/main.log`.
+- The window is revealed on `did-finish-load` (with `ready-to-show` and a 4s timeout as fallbacks), because `ready-to-show` does not reliably fire in the packaged Windows build.
+
 ## Security Notes
 - Credentials are encrypted at rest using Electron `safeStorage` (Windows DPAPI). Only decrypted in-memory in the main process.
 - Host-key pinning on first connect; subsequent mismatches raise a warning instead of silent connect.

@@ -21,7 +21,9 @@ See [SERVER-MANAGER.md](SERVER-MANAGER.md) for the full project doc and database
 
 ## Download
 
-A pre-built Windows installer is in [release/](release/) (NSIS, ~88 MB). Just run `Server Manager-Setup-*.exe`.
+Grab the latest Windows installer (`Server Manager-Setup-*.exe`, NSIS, ~85 MB) from the [Releases page](https://github.com/BangerTech/Server-Manager/releases/latest) and run it.
+
+If the app doesn't start, check `%APPDATA%\server-manager\main.log`.
 
 ## Build from source
 
