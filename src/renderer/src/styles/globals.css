@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 27% 7%;
+    --foreground: 210 20% 96%;
+    --card: 222 24% 10%;
+    --card-foreground: 210 20% 96%;
+    --popover: 222 24% 10%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 244 76% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 20% 16%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 222 20% 14%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 222 20% 18%;
+    --accent-foreground: 210 20% 96%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 244 76% 65%;
+    --radius: 0.75rem;
+    --success: 142 72% 50%;
+    --warning: 38 92% 55%;
+    --info: 199 89% 58%;
+  }
+
+  html.light {
+    --background: 220 20% 98%;
+    --foreground: 222 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 30% 12%;
+    --primary: 244 76% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 222 30% 12%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 222 10% 40%;
+    --accent: 220 15% 90%;
+    --accent-foreground: 222 30% 12%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 244 76% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    overflow: hidden;
+  }
+
+  /* Draggable title region for frameless window */
+  .app-drag {
+    -webkit-app-region: drag;
+  }
+  .app-no-drag {
+    -webkit-app-region: no-drag;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(180deg, hsl(var(--card) / 0.9), hsl(var(--card) / 0.65));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border));
+  }
+  .glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--primary) / 0.2),
+      0 8px 32px -8px hsl(var(--primary) / 0.35);
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, hsl(var(--muted-foreground) / 0.08), transparent);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}

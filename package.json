@@ -1,0 +1,51 @@
+{
+  "name": "server-manager",
+  "version": "0.1.0",
+  "description": "Modern Windows app to manage Linux/Docker home servers over SSH",
+  "main": "out/main/index.js",
+  "author": "info",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev --watch",
+    "build": "electron-vite build",
+    "build:win": "electron-vite build && electron-builder --win --config electron-builder.yml",
+    "start": "electron-vite preview",
+    "rebuild": "electron-builder install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.59.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "better-sqlite3": "^11.5.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.0",
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ssh2": "^1.16.0",
+    "tailwind-merge": "^2.5.4",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/ssh2": "^1.15.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

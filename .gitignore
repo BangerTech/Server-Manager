@@ -1,0 +1,12 @@
+node_modules/
+out/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+server-manager.db
+
+# Keep the NSIS installer in release/, drop the rest
+release/*
+!release/*.exe
